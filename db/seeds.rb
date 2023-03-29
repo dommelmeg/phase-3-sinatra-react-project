@@ -2,7 +2,7 @@ puts "🌱 Seeding books..."
 
 50.times do
   book = Book.create(
-    image: Faker::LoremFlickr.image,
+    image: Faker::LoremFlickr.image(size: "150x200", search_terms: ['books']),
     title: Faker::Book.title,
     author: Faker::Book.author,
     genre: Faker::Book.genre,
