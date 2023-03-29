@@ -8,8 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get "/books" do
     book = Book.all
-
-    book.to_json
+    book.to_json(include: :reviews)
   end
 
 end

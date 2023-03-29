@@ -1,17 +1,21 @@
 puts "🌱 Seeding books..."
 
-Book.create(
-  image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg", 
-  title: "Harry Potter and the Chamber of Secrets", 
-  author: "J.K. Rowling",
-  genre: "Fantasy",
-  done_reading: false 
-)
+50.times do
+  book = Book.create(
+    image: Faker::LoremFlickr.image,
+    title: Faker::Book.title,
+    author: Faker::Book.author,
+    genre: Faker::Book.genre,
+    done_reading: Faker::Boolean.boolean
+  )
 
-puts "✅ Done seeding!"
-
-puts "🌱 Seeding reviews..."
-
-
+  rand(1..3).times do
+    Review.create(
+      rating: rand(1..5),
+      comment: Faker::Lorem.sentence,
+      book_id: book.id
+    )
+  end
+end
 
 puts "✅ Done seeding!"
