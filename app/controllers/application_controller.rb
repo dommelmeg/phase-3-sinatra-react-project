@@ -24,13 +24,14 @@ class ApplicationController < Sinatra::Base
       image: params[:image],
       done_reading: params[:done_reading]
     )
-    book.to_json
+    book.to_json(include: :reviews)
   end
 
   post "/reviews" do
     review = Review.create(
       rating: params[:rating],
-      comment: params[:comment]
+      comment: params[:comment],
+      book_id: params[:book_id]
     )
     review.to_json
   end
@@ -40,7 +41,7 @@ class ApplicationController < Sinatra::Base
     book.update(
       done_reading: params[:done_reading]
     )
-    book.to_json
+    book.to_json(include: :reviews)
   end
 
   patch "/reviews/:id" do
@@ -55,7 +56,7 @@ class ApplicationController < Sinatra::Base
   delete "/books/:id" do
     book = Book.find(params[:id])
     book.destroy
-    book.to_json
+    book.to_json(include: :reviews)
   end
 
   delete "/reviews/:id" do
