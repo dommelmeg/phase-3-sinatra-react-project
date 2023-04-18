@@ -1,26 +1,59 @@
 # Phase 3 Project: Bookworm
 
-## Edits in progress
+A single page app that allows you to keep track of the books you've read & keep a wish list of the books you want to read. You can also leave notes/comments and ratings for each book.
 
+## Backend Setup
+Fork and clone the repo by clicking the green code button at the top right, copy the SSH URL.
 
-### Backend Setup
+Type the following code into your terminal & replace URL with the one you just copied.
 
-[**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+```bash
+git clone URL
+```
 
-You can start your server with:
+This will copy all the files from this repo down to your computer.
+
+### Installation
+
+ Run `bundle install` to install the gems.
+
+You can start the server with:
 
 ```console
 $ bundle exec rake server
 ```
 
-This will run your server on port
+This will run the server on port
 [http://localhost:9292](http://localhost:9292).
 
-### Frontend Setup
+## Frontend Setup
 
-## Resources
+You can find the frontend repo [here](https://github.com/dommelmeg/bookworm-frontend).
 
-- [create-react-app][]
+Fork and clone the repo by clicking the green code button at the top right, copy the SSH URL.
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
+Type the following code into your terminal & replace URL with the one you just copied.
+
+```bash
+git clone URL
+```
+
+This will copy all the files from this repo down to your computer.
+
+### Installation
+
+In the project directory, run:
+
+```bash
+npm install
+```
+In that same terminal, run:
+
+```bash
+npm start
+```
+In a different terminal, run:
+```bash
+npm run server
+```
+Keep this up and running while viewing the app.
